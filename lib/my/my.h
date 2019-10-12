@@ -19,4 +19,5 @@
     void print_number(int n);
     void handle_int_min(void);
     int my_strcmp(char const *s1, char const *s2);
+    int my_putstr(char const *str);
 #endif

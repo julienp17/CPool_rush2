@@ -7,24 +7,37 @@
 
 #include "my.h"
 #include "rush2.h"
+#include <stdio.h>
 
-void my_print(int ac, char **av)
+void my_print(int ac, char **av, struct letter_t letters[NB_ALPHABET])
 {
     int i = 2;
-    int occurence = 0;
-    float percentage = 0;
+    int j = 0;
+    char my_letter = ' ';
 
     while (i < ac) {
-        occurence = get_occurence(av[1], av[i][0]);
-        percentage = get_percentage(av[1], occurence);
-        print_occurence(av[i][0], occurence);
-        my_putchar(' ');
-        my_putchar('(');
-        print_percentage(percentage, FLOAT_FIGURES);
-        my_putchar(')');
-        my_putchar('\n');
+        my_letter = av[i][0];
+        if (my_is_alpha_upper(my_letter))
+            my_letter = my_letter + 32;
+        j = 0;
+        while (j < NB_ALPHABET) {
+            if (my_letter == letters[j].letter)
+                print_line(av[i][0], letters[j]);
+            j = j + 1;
+        }
         i = i + 1;
     }
+    print_language(letters);
+}
+
+void print_line(char my_letter, struct letter_t letter)
+{
+    print_occurence(my_letter, letter.occurence);
+    my_putchar(' ');
+    my_putchar('(');
+    print_percentage(letter.percentage, FLOAT_FIGURES);
+    my_putchar(')');
+    my_putchar('\n');
 }
 
 void print_occurence(char my_char, int occurence)
@@ -50,4 +63,13 @@ void print_percentage(float percentage, int figures)
         i = i + 1;
     }
     my_putchar('%');
+}
+
+void print_language(struct letter_t letters[NB_ALPHABET])
+{
+    my_putchar('=');
+    my_putchar('>');
+    my_putchar(' ');
+    my_putstr(get_language(letters));
+    my_putchar('\n');
 }

@@ -8,9 +8,12 @@
 CC = gcc
 
 SRC = main.c \
+		error_handling.c \
 	    str_occurence.c \
-	    get_percentage.c \
-	    my_print.c
+	    my_print.c \
+	    struct_letters.c \
+	    percentage_file.c \
+	    language.c
 
 CFLAGS = -W -Wall -Wextra -Werror -I./include
 

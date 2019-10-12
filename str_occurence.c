@@ -35,6 +35,14 @@ int get_occurence(char const *str, char my_char)
     return (occurence);
 }
 
+float get_percentage(char const *str, int occurence)
+{
+    float percentage = 0.0;
+
+    percentage = (float)occurence * 100 / (float)get_total_letters(str);
+    return (percentage);
+}
+
 int get_total_letters(char const *str)
 {
     int i = 0;
