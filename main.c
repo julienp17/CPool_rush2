@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** C Pool Rush 2
 ** File description:
-** Main file for rush2
+** Main file for the rush2
 */
 
 #include <stddef.h>
