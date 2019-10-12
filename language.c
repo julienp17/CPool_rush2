@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** C Pool Rush 2
 ** File description:
-** Determines which language is the string
+** Determines which language is the string from
 */
 
 #include "rush2.h"
