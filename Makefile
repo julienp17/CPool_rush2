@@ -7,13 +7,15 @@
 
 CC 		= 	gcc
 
-SRC 	= 	./main.c \
-			./error_handling.c \
-			./str_occurence.c \
-			./my_print.c \
-			./struct_letters.c \
-			./percentage_file.c \
-			./language.c
+SRC		=	$(addprefix $(SRC_D), $(SRC_F))
+SRC_D	=	./src/
+SRC_F 	= 	main.c \
+			error_handling.c \
+			str_occurence.c \
+			my_print.c \
+			struct_letters.c \
+			percentage_file.c \
+			language.c
 
 OBJ 	=	$(SRC:.c=.o)
 
@@ -27,10 +29,11 @@ NAME 	= 	rush2
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): makelib $(OBJ)
+	$(CC) -o $(NAME) $(OBJ) $(CFLAGS)
+
+makelib:
 	make -C ./lib/my all
-	$(CC) -c $(SRC) $(CFLAGS)
-	$(CC) -o $(NAME) $(SRC:.c=.o) $(CFLAGS) $(LDFLAGS)
 
 tests_run: clean all
 	make -C ./tests all
