@@ -7,8 +7,12 @@
 
 CC = gcc
 
-SRC = ../main.c \
-	    ../str_occurence.c
+SRC = ../error_handling.c \
+	    ../str_occurence.c \
+	    ../my_print.c \
+	    ../percentage_file.c \
+	    ../struct_letters.c \
+	    ../language.c
 
 SRC_UT = ./test_print_occurence.c \
 	       ./test_get_occurence.c \
