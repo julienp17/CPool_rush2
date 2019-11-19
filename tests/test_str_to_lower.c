@@ -6,27 +6,28 @@
 */
 
 #include <criterion/criterion.h>
+#include "my.h"
 #include "rush2.h"
 
 Test(str_to_lower, all_upper)
 {
-    char *str = "MY NAME IS MARVIN!!!";
+    char *str = "MY NAME IS MARVIN";
 
-    cr_assert_str_eq(str_to_lower(str), "my name is marvin!!!");
+    cr_assert_str_eq(str_to_lower(str), strdup("my name is marvin"));
 }
 
 Test(str_to_lower, all_lower)
 {
-    char *str = "my name is marvin!!!";
+    char *str = "my name is marvin";
 
     cr_assert_str_eq(str_to_lower(str), str);
 }
 
 Test(str_to_lower, lower_and_upper)
 {
-    char *str = "mY NaME IS mArvIN!!!";
+    char *str = "mY NaME IS mArvIN";
 
-    cr_assert_str_eq(str_to_lower(str), "my name is marvin!!!");
+    cr_assert_str_eq(str_to_lower(str), "my name is marvin");
 }
 
 Test(str_to_lower, all_digits)

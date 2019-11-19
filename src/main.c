@@ -7,11 +7,10 @@
 
 #include "my.h"
 #include "rush2.h"
-#include <stdio.h>
 
 int main(int ac, char **av)
 {
-    letter_t letters[26];
+    letter_t letters[NB_ALPHABET];
 
     if (check_error(ac, av))
         return (MY_EXIT_FAILURE);
