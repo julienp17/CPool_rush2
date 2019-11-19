@@ -1,11 +1,9 @@
 ## Rush 2
 > C Pool
 >
-> Automatically guesses the language in which a text is written (only English, French, German, and Spanish are considered)
+> Automatically guesses the language in which a text is written (only English, French, German, and Spanish are considered), and print the occurence of the given chars in the string
 >
 > 1 day, 2 students, made with [Stanislas Singamy](stanislas.singamy@epitech.eu)
-
-This was my favorite project to do, even though I got zero :(
 
 The longer the string, the better the results
 
@@ -26,5 +24,7 @@ Take a look at this [Wikipedia page about letters frequencies](https://en.wikipe
 ### Grade
 
 ![GRADE](bonus/grade_black.png)
+
+This was my favorite project to do, even though I got zero :(
 
 My solution was to read from a csv file containing each letter frequency for the 4 languages, unfortunately it was forbidden to read from a file for this project
