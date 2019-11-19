@@ -5,32 +5,38 @@
 ## Project root Makefile
 ##
 
-CC = gcc
+CC 		= 	gcc
 
-SRC = main.c \
-		error_handling.c \
-	    str_occurence.c \
-	    my_print.c \
-	    struct_letters.c \
-	    percentage_file.c \
-	    language.c
+SRC 	= 	./main.c \
+			./error_handling.c \
+			./str_occurence.c \
+			./my_print.c \
+			./struct_letters.c \
+			./percentage_file.c \
+			./language.c
 
-CFLAGS = -W -Wall -Wextra -Werror -I./include
+OBJ 	=	$(SRC:.c=.o)
 
-LDFLAGS = -L./lib -lmy
+CFLAGS 	= 	-W -Wall -Wextra -Werror $(INC) $(LDFLAGS)
 
-NAME = rush2
+INC		=	-I./include
 
-all:
+LDFLAGS = 	-L./lib -lmy
+
+NAME 	= 	rush2
+
+all: $(NAME)
+
+$(NAME):
 	make -C ./lib/my all
 	$(CC) -c $(SRC) $(CFLAGS)
 	$(CC) -o $(NAME) $(SRC:.c=.o) $(CFLAGS) $(LDFLAGS)
 
-tests_run:
+tests_run: clean all
 	make -C ./tests all
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
 	make -C ./lib/my clean
 
 fclean: clean
