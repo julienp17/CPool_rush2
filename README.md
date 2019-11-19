@@ -7,6 +7,8 @@
 
 This was my favorite project to do, even though I got zero :(
 
+The longer the string, the better the results
+
 - [Usage](#usage)
 - [Example](#example)
 - [Grade](#grade)
@@ -19,7 +21,7 @@ This was my favorite project to do, even though I got zero :(
 
 ![Example](bonus/example.png)
 
-Take a look at this [Wikipedia article about letters frequencies in each language](https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_letters_in_other_languages) to understand how the program is able to deduce the language
+Take a look at this [Wikipedia page about letters frequencies](https://en.wikipedia.org/wiki/Letter_frequency#Relative_frequencies_of_letters_in_other_languages) to understand how the program is able to deduce the language.
 
 ### Grade
 
